@@ -1,7 +1,7 @@
 interface UploadedFile {
     originalFileName: string,
     uniqueFileName: string,
-    fileSize: Number,
+    fileSize: number,
     fileExtension: string
 }
 

@@ -13,7 +13,7 @@ class FileRepo {
         return instance
     }
 
-    async createFileRecord(file: UploadedFile): Promise<Number> {
+    async createFileRecord(file: UploadedFile): Promise<number> {
         try {
             return await new Promise((resolve, reject) => {
                 connection.query(

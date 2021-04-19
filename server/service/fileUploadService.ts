@@ -15,7 +15,7 @@ class FileUploadService
         return path.extname(this.file.originalname)
     }
 
-    async createFileUpload(): Promise<Number> {
+    async createFileUpload(): Promise<number> {
         const uniqueFileName = this.createUniqueFileName()
         const fileId = await this.createFileRecord(uniqueFileName)
         
@@ -29,7 +29,7 @@ class FileUploadService
         return `${uuidv4()}_${timeStamp}${this.getFileExtension()}`
     }
 
-    private async createFileRecord(uniqueFileName: string): Promise<Number> {
+    private async createFileRecord(uniqueFileName: string): Promise<number> {
         return await fileRepo.createFileRecord({
             originalFileName: this.file.originalname,
             uniqueFileName,

@@ -23,18 +23,18 @@ function FileUpload() {
         if (!file) {
             return
         }
-
-        console.log(file[0])
         
         const validFileSize = await validateFileSize(file[0].size)
         const validFileType = await validateFileType(FileService.getFileExtension(file[0].name))
 
         if (!validFileSize.isValid) {
             setUploadFormError(validFileSize.errorMessage)
+            return
         }
 
         if (!validFileType.isValid) {
             setUploadFormError(validFileType.errorMessage)
+            return
         }
         
         if (uploadFormError && validFileSize.isValid) {
