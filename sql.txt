@@ -1,0 +1,8 @@
+CREATE TABLE uploaded_file(
+	file_id INT NOT NULL AUTO_INCREMENT,
+    file_name VARCHAR(100) NOT NULL,
+    unique_file_name VARCHAR(255) NOT NULL,
+    file_size INT NOT NULL COMMENT 'stored in bytes',
+    file_extension VARCHAR(10) NOT NULL,
+    PRIMARY KEY(file_id)
+);
